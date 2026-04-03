@@ -1,2 +1,2 @@
-# Sangram_Vol-RA
-Contributing to Project Nebula under the mentorship of Navrati Saxena.
+# Project Nebula
+Contributing to Project Nebula under the mentorship of Sangram Jagtap and Navrati Saxena.
