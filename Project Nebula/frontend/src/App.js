@@ -18,7 +18,7 @@ const AuthenticatedApp = () => {
   const [currentView, setCurrentView] = useState('dashboard');
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div style={{ visibility: 'hidden' }} />;
   }
 
   if (isAuthenticated) {
