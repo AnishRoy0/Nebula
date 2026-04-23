@@ -14,7 +14,7 @@ import './App.css';
 const AuthenticatedApp = () => {
   const { user, logout, isAuthenticated, isLoading } = useAuth();
   const [showLogin, setShowLogin] = useState(true);
-  const [showLanding, setShowLanding] = useState(!isAuthenticated);
+  const [showLanding, setShowLanding] = useState(!localStorage.getItem('token'));
   const [currentView, setCurrentView] = useState('dashboard');
 
   if (isLoading) {
