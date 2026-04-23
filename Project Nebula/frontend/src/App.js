@@ -12,10 +12,14 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import './App.css';
 
 const AuthenticatedApp = () => {
-  const { user, logout, isAuthenticated } = useAuth();
+  const { user, logout, isAuthenticated, isLoading } = useAuth();
   const [showLogin, setShowLogin] = useState(true);
   const [showLanding, setShowLanding] = useState(true);
-  const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard', 'events', 'resources', 'research-updates', 'feedback', 'newsletter'
+  const [currentView, setCurrentView] = useState('dashboard');
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   if (isAuthenticated) {
     return (
@@ -102,7 +106,7 @@ const AuthenticatedApp = () => {
       </div>
       
       {showLogin ? (
-        <LoginForm onLoginSuccess={() => {/* Auth context handles this */}} />
+        <LoginForm onLoginSuccess={() => {}} />
       ) : (
         <RegistrationForm onRegistrationSuccess={() => setShowLogin(true)} />
       )}
